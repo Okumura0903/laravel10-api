@@ -18,7 +18,7 @@ use App\Http\Controllers\Api\V1\CompleteTaskController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-require __DIR__ . '/api/v1.php';
+// require __DIR__ . '/api/v1.php';
 require __DIR__ . '/api/v2.php';
 /*
 Route::middleware('auth:sanctum')->prefix('v1')->group(function(){
