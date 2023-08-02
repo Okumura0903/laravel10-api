@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\V1\TaskController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\V1\CompleteTaskController;
-
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -37,7 +37,9 @@ Route::prefix('auth')->group(function(){
 // });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//    return $request->user();
+    Log::debug("debug ログ!");
+    Log::debug($request->user());
+    return $request->user();
 //    return auth()->user();
-    return "test";
+//    return "test";
 });
