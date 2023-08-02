@@ -36,7 +36,7 @@ Route::prefix('auth')->group(function(){
 //     return $request->user();
 // });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+Route::get('/user', function (Request $request) {
     Log::debug("debug ログ!");
     Log::debug($request->user());
     return $request->user();
