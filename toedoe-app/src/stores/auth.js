@@ -12,17 +12,24 @@ export const userAuthStore=defineStore("authStore",()=>{
         try{
             const {data}=await getUser()
             user.value=data
+            console.log('user.value='+user.value)
         }
         catch(error){
             user.value=null
+            console.log('error')
         }
     }
 
     const handleLogin=async(credentials)=>{
+        console.log('h1')
         await csrfCookie()
         try{
+            console.log('h2')
             await login(credentials)
+            console.log('h3')
             await fetchUser()
+            console.log('h4')
+
             errors.value={}
         }
         catch(error){
@@ -33,6 +40,7 @@ export const userAuthStore=defineStore("authStore",()=>{
     }
 
     const handleRegister=async(newUser)=>{
+        await csrfCookie()
         try{
             await register(newUser)
             await handleLogin({

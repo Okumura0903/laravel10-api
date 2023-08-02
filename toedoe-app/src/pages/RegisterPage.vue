@@ -55,7 +55,7 @@ const form=reactive({
 })
 
 const handleSubmit=async ()=>{
-    await store.handleRegister(form)
+    await handleRegister(form)
     if(isLoggedIn.value){
         router.push({name:'tasks'})    
     }
